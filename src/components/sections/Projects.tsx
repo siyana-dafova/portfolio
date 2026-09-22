@@ -1,6 +1,7 @@
 import Section from "@/components/ui/Section";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 import { projects } from "@/data/projects";
 import { FaGithub } from "react-icons/fa";
 import { ExternalLinkIcon } from "lucide-react";
@@ -29,7 +30,12 @@ const Projects = () => {
                 </div>
               </div>
 
-              <ul className="mb-5 flex flex-wrap gap-2">
+              <ul
+                className={cn(
+                  "flex flex-wrap gap-2",
+                  (project.githubUrl || project.demoUrl) && "mb-5",
+                )}
+              >
                 {project.tags.map((tag) => {
                   const TagIcon = tag.icon;
 
@@ -51,31 +57,35 @@ const Projects = () => {
                 })}
               </ul>
 
-              <div className="flex flex-wrap items-center gap-3">
-                <Button
-                  href={project.githubUrl}
-                  variant="outline"
-                  size="sm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub className="mr-2 h-4 w-4" aria-hidden />
-                  GitHub
-                </Button>
+              {project.githubUrl || project.demoUrl ? (
+                <div className="flex flex-wrap items-center gap-3">
+                  {project.githubUrl ? (
+                    <Button
+                      href={project.githubUrl}
+                      variant="outline"
+                      size="sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaGithub className="mr-2 h-4 w-4" aria-hidden />
+                      GitHub
+                    </Button>
+                  ) : null}
 
-                {project.demoUrl ? (
-                  <Button
-                    href={project.demoUrl}
-                    variant="outline"
-                    size="sm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLinkIcon className="mr-2 h-4 w-4" aria-hidden />
-                    Live Demo
-                  </Button>
-                ) : null}
-              </div>
+                  {project.demoUrl ? (
+                    <Button
+                      href={project.demoUrl}
+                      variant="outline"
+                      size="sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLinkIcon className="mr-2 h-4 w-4" aria-hidden />
+                      Live Demo
+                    </Button>
+                  ) : null}
+                </div>
+              ) : null}
             </article>
           ))}
         </div>

@@ -7,7 +7,6 @@ import {
   SiTypescript,
   SiWordpress,
 } from "react-icons/si";
-import { profile } from "@/data/profile";
 
 export type ProjectTag = {
   id: string;
@@ -21,7 +20,7 @@ export type Project = {
   title: string;
   description: string;
   tags: ProjectTag[];
-  githubUrl: string;
+  githubUrl?: string;
   demoUrl?: string;
 };
 
@@ -38,7 +37,6 @@ export const projects: Project[] = [
       { id: "typescript", label: "TypeScript", icon: SiTypescript },
       { id: "tailwind", label: "Tailwind", icon: SiTailwindcss },
     ],
-    githubUrl: `${profile.github}/portfolio`,
   },
   {
     id: "wordpress-theme",
@@ -51,7 +49,6 @@ export const projects: Project[] = [
       { id: "php", label: "PHP", icon: SiPhp },
       { id: "tailwind", label: "Tailwind", icon: SiTailwindcss },
     ],
-    githubUrl: `${profile.github}/wordpress-theme`,
   },
   {
     id: "react-dashboard",
@@ -64,6 +61,5 @@ export const projects: Project[] = [
       { id: "typescript", label: "TypeScript", icon: SiTypescript },
       { id: "tailwind", label: "Tailwind", icon: SiTailwindcss },
     ],
-    githubUrl: `${profile.github}/react-dashboard`,
   },
 ];
