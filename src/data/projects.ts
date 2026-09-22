@@ -40,20 +40,8 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/siyana-dafova/portfolio",
   },
   {
-    id: "wordpress-theme",
-    index: "02",
-    title: "Custom WordPress Theme",
-    description:
-      "A custom WordPress theme with reusable templates, content-driven pages, and a responsive layout tailored for a marketing website.",
-    tags: [
-      { id: "wordpress", label: "WordPress", icon: SiWordpress },
-      { id: "php", label: "PHP", icon: SiPhp },
-      { id: "tailwind", label: "Tailwind", icon: SiTailwindcss },
-    ],
-  },
-  {
     id: "react-dashboard",
-    index: "03",
+    index: "02",
     title: "React Dashboard",
     description:
       "A dashboard UI with reusable components, type-safe data views, and a consistent design system for everyday product workflows.",

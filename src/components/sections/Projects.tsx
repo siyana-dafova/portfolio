@@ -1,10 +1,10 @@
 import Section from "@/components/ui/Section";
 import SectionTitle from "@/components/ui/SectionTitle";
-import Button from "@/components/ui/Button";
-import { cn } from "@/lib/utils";
-import { projects } from "@/data/projects";
-import { FaGithub } from "react-icons/fa";
-import { ExternalLinkIcon } from "lucide-react";
+// import Button from "@/components/ui/Button";
+// import { cn } from "@/lib/utils";
+// import { projects } from "@/data/projects";
+// import { FaGithub } from "react-icons/fa";
+// import { ExternalLinkIcon } from "lucide-react";
 
 const Projects = () => {
   return (
@@ -12,6 +12,17 @@ const Projects = () => {
       <div className="flex w-full flex-col items-start gap-8">
         <SectionTitle>Projects</SectionTitle>
 
+        <article className="w-full rounded-2xl border border-border bg-background-secondary p-5 md:p-6">
+          <span className="text-sm font-bold tracking-widest text-primary">
+            SOON
+          </span>
+          <h3 className="mt-2 font-bold text-foreground">Coming soon</h3>
+          <p className="mt-1 text-sm text-muted">
+            Selected projects will show up here shortly.
+          </p>
+        </article>
+
+        {/*
         <div className="flex w-full flex-col gap-5">
           {projects.map((project) => (
             <article
@@ -89,6 +100,7 @@ const Projects = () => {
             </article>
           ))}
         </div>
+        */}
       </div>
     </Section>
   );
