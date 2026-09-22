@@ -37,6 +37,7 @@ export const projects: Project[] = [
       { id: "typescript", label: "TypeScript", icon: SiTypescript },
       { id: "tailwind", label: "Tailwind", icon: SiTailwindcss },
     ],
+    githubUrl: "https://github.com/siyana-dafova/portfolio",
   },
   {
     id: "wordpress-theme",
