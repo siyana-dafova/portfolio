@@ -10,9 +10,10 @@ const HeroContent = () => {
 
       <div className="grid w-full grid-cols-1 items-start gap-6 md:grid-cols-2">
         <p className="text-muted">
-          I&apos;m a frontend developer with a passion for creating beautiful
-          and functional web applications. I&apos;m a quick learner and I&apos;m
-          always looking to improve my skills.
+          I&apos;m a frontend developer with over 10 years of experience
+          building web applications people use every day. I care about clean,
+          maintainable code and interfaces that stay fast, accessible, and easy
+          to work with as they grow.
         </p>
 
         <div className="flex flex-col items-start gap-2 text-sm">
@@ -50,28 +51,30 @@ const HeroContent = () => {
         <div className="flex flex-col items-start gap-2">
           <h3 className="font-bold text-foreground">Frontend Development</h3>
           <p className="text-sm text-muted">
-            I specialize in building beautiful and functional web applications
-            using React, Next.js, and Tailwind CSS.
+            I build responsive, type-safe web applications with React, Next.js,
+            and Tailwind CSS — from reusable components to production-ready UIs.
           </p>
         </div>
         <div className="flex flex-col items-start gap-2">
           <h3 className="font-bold text-foreground">WordPress Development</h3>
           <p className="text-sm text-muted">
-            I specialize in building beautiful and functional WordPress websites
-            using WordPress, PHP, and MySQL.
+            I create custom WordPress sites with PHP and MySQL, including
+            themes, content-driven layouts, and backend logic that editors can
+            use.
           </p>
         </div>
         <div className="flex flex-col items-start gap-2">
           <h3 className="font-bold text-foreground">UI Development</h3>
           <p className="text-sm text-muted">
-            I specialize in building beautiful and functional UI using Figma,
-            React, and Tailwind CSS.
+            I turn Figma designs into clean, accessible interfaces with React
+            and Tailwind CSS, keeping layouts consistent across breakpoints.
           </p>
         </div>
         <div className="flex flex-col items-start gap-2">
           <h3 className="font-bold text-foreground">Performance</h3>
           <p className="text-sm text-muted">
-            SEO, Lighthouse and performance optimization.
+            I tune SEO, Lighthouse, and Core Web Vitals so pages load faster,
+            rank better, and stay smooth for real users.
           </p>
         </div>
       </div>
