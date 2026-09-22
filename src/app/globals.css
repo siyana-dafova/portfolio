@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --palette-bg: #0f1117;
+  --palette-bg-secondary: #151923;
+  --palette-surface: #171b26;
+  --palette-surface-hover: #1c2130;
+  --palette-surface-elevated: #202635;
+
+  --palette-primary: #78cc6d;
+  --palette-primary-hover: #62b858;
+  --palette-primary-foreground: #0f1117;
+  --palette-primary-wash: rgba(120, 204, 109, 0.15);
+
+  --palette-text: #f8fafc;
+  --palette-text-secondary: #cbd5e1;
+  --palette-text-muted: #94a3b8;
+  --palette-text-subtle: #64748b;
+
+  --palette-border: rgba(255, 255, 255, 0.08);
+  --palette-grid: rgba(255, 255, 255, 0.03);
+  --palette-glow: rgba(120, 204, 109, 0.16);
+  --palette-scrollbar-thumb: rgba(255, 255, 255, 0.14);
+  --palette-divider: rgba(197, 202, 213, 0.5);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --palette-bg: #eef1f6;
+  --palette-bg-secondary: #ffffff;
+  --palette-surface: #ffffff;
+  --palette-surface-hover: #f4f6fa;
+  --palette-surface-elevated: #f8fafc;
+
+  --palette-primary: #4eae45;
+  --palette-primary-hover: #3f9a37;
+  --palette-primary-foreground: #ffffff;
+  --palette-primary-wash: rgba(78, 174, 69, 0.14);
+
+  --palette-text: #0f172a;
+  --palette-text-secondary: #334155;
+  --palette-text-muted: #64748b;
+  --palette-text-subtle: #94a3b8;
+
+  --palette-border: rgba(15, 23, 42, 0.1);
+  --palette-grid: rgba(15, 23, 42, 0.06);
+  --palette-glow: rgba(78, 174, 69, 0.18);
+  --palette-scrollbar-thumb: rgba(15, 23, 42, 0.16);
+  --palette-divider: rgba(15, 23, 42, 0.22);
+}
+
+@theme inline {
+  --color-background: var(--palette-bg);
+  --color-background-secondary: var(--palette-bg-secondary);
+  --color-foreground: var(--palette-text);
+  --color-surface: var(--palette-surface);
+  --color-surface-hover: var(--palette-surface-hover);
+  --color-surface-elevated: var(--palette-surface-elevated);
+  --color-primary: var(--palette-primary);
+  --color-primary-hover: var(--palette-primary-hover);
+  --color-primary-foreground: var(--palette-primary-foreground);
+  --color-primary-wash: var(--palette-primary-wash);
+  --color-secondary: var(--palette-text-secondary);
+  --color-muted: var(--palette-text-muted);
+  --color-subtle: var(--palette-text-subtle);
+  --color-border: var(--palette-border);
+  --font-sans: var(--font-play-family);
+  --font-mono: var(--font-play-family);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--palette-bg);
+  color: var(--palette-text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(var(--palette-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--palette-grid) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle, white, transparent 90%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  left: -150px;
+  top: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 9999px;
+  background: var(--palette-glow);
+  filter: blur(120px);
+  z-index: -1;
+}
+
+.panel-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--palette-primary) 45%, transparent)
+    transparent;
+}
+
+@media (min-width: 64rem) {
+  .panel-scroll {
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+  }
+}
+
+.panel-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 12px;
+}
+
+.panel-scroll::-webkit-scrollbar-thumb {
+  background: var(--palette-scrollbar-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.panel-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--palette-primary);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.section-title {
+  isolation: isolate;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  z-index: -1;
+  border-radius: 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 204, 109, 0.4) 0%,
+    rgba(120, 204, 109, 0.01) 100%
+  );
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: radial-gradient(
+    ellipse at left,
+    var(--palette-divider) 0%,
+    transparent 70%
+  );
+}
+
+[data-theme="light"] .theme-toggle-sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle-moon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle-sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle-moon {
+  display: none;
+}
